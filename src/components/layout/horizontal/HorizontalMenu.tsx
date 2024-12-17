@@ -84,6 +84,9 @@ const HorizontalMenu = () => {
         <MenuItem href='/career' icon={<i className='tabler-building-skyscraper' />}>
           Career
         </MenuItem>
+        <MenuItem href='/investments' icon={<i className='tabler-coins' />}>
+          Investments
+        </MenuItem>
         <MenuItem href='/finance' icon={<i className='tabler-businessplan' />}>
           Finance
         </MenuItem>

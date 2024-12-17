@@ -56,3 +56,44 @@ export const SUBSCRIPTION_PLANS_LIST = [
     }
   }
 ]
+
+export const INVESTMENTS_TABS = [
+  {
+    id: 1,
+    label: 'AI-Forex',
+    icon: 'tabler-align-box-bottom-center',
+    value: 'ai-forex'
+  },
+  {
+    id: 2,
+    label: 'AI-Pharmaceutical',
+    icon: 'tabler-align-box-bottom-center',
+    value: 'ai-pharmaceutical'
+  },
+  {
+    id: 3,
+    label: 'AI-IPO',
+    icon: 'tabler-align-box-bottom-center',
+    value: 'ai-ipo'
+  },
+  {
+    id: 4,
+    label: 'AI-Crypto-LM',
+    icon: 'tabler-align-box-bottom-center',
+    value: 'ai-crypto-lm'
+  }
+]
+
+export const NEWS_TABS = [
+  {
+    id: 1,
+    label: 'News',
+    value: 'news'
+  },
+  {
+    id: 2,
+    label: 'Upgrade',
+    value: 'upgrade',
+    disabled: true
+  }
+]
