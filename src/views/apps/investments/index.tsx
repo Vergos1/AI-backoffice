@@ -27,15 +27,8 @@ const Investments = ({ tabContentList, tabButtonsList }: Props) => {
         <Grid container spacing={6}>
           <Grid item xs={12}>
             <CustomTabList orientation='horizontal' onChange={handleChange} pill='true'>
-              {tabButtonsList.map(({ id, label, icon, value }) => (
-                <Tab
-                  key={id}
-                  label={label}
-                  //   icon={<i className={icon} />}
-                  iconPosition='start'
-                  value={value}
-                  className='flex-row justify-center'
-                />
+              {tabButtonsList.map(({ id, label, value }) => (
+                <Tab key={id} label={label} iconPosition='start' value={value} className='flex-row justify-center' />
               ))}
             </CustomTabList>
           </Grid>

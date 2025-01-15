@@ -1,4 +1,3 @@
-'use client'
 import type { ReactElement } from 'react'
 
 import dynamic from 'next/dynamic'
@@ -12,7 +11,7 @@ const SubscriptionTab = dynamic(() => import('@/views/apps/career/subscription-t
 const tabContentList = (): { [key: string]: ReactElement } => ({
   'personal-marketing': <PersonalMarketingTab />,
   'company-marketing': <CompanyMarketingTab />,
-  subscription: <SubscriptionTab />
+  'ai-subscription': <SubscriptionTab />
 })
 
 export default function Page() {

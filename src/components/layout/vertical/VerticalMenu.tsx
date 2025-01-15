@@ -77,11 +77,17 @@ const VerticalMenu = ({ scrollMenu }: Props) => {
         <MenuItem href='/investments' icon={<i className='tabler-coins' />}>
           Investments
         </MenuItem>
+        <MenuItem href='/estate' icon={<i className='tabler-building-estate' />}>
+          Estate
+        </MenuItem>
         <MenuItem href='/finance' icon={<i className='tabler-businessplan' />}>
           Finance
         </MenuItem>
         <MenuItem href='/news' icon={<i className='tabler-news' />}>
           News
+        </MenuItem>
+        <MenuItem href='/support' icon={<i className='tabler-help' />}>
+          Support
         </MenuItem>
       </Menu>
       {/* <Menu

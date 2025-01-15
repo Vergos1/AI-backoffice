@@ -21,14 +21,20 @@
     "@mui/lab": "5.0.0-alpha.172",
     "@mui/material": "5.16.4",
     "@mui/material-nextjs": "5.16.4",
+    "@tabler/icons-react": "^3.27.1",
     "classnames": "2.5.1",
+    "keen-slider": "^6.8.6",
     "next": "14.2.5",
     "react": "18.3.1",
+    "react-apexcharts": "^1.7.0",
     "react-colorful": "5.6.1",
     "react-dom": "18.3.1",
+    "react-dropzone": "^14.3.5",
     "react-perfect-scrollbar": "1.5.8",
+    "react-toastify": "^11.0.2",
     "react-use": "17.5.1",
-    "server-only": "0.0.1"
+    "server-only": "0.0.1",
+    "usehooks-ts": "^3.1.0"
   },
   "devDependencies": {
     "@iconify/json": "2.2.230",

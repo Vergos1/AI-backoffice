@@ -7,8 +7,9 @@ import type { ReactElement } from 'react'
 import type { SystemMode } from '@core/types'
 
 // Hook Imports
-import { useSettings } from '@core/hooks/useSettings'
 import useLayoutInit from '@core/hooks/useLayoutInit'
+import { useSettings } from '@core/hooks/useSettings'
+import 'keen-slider/keen-slider.min.css'
 
 type LayoutWrapperProps = {
   systemMode: SystemMode

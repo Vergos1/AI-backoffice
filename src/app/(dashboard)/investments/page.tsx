@@ -7,10 +7,10 @@ import Investments from '@/views/apps/investments'
 const InvestmentTab = dynamic(() => import('@/views/apps/investments/investment-tab/InvestmentTab'))
 
 const tabContentList = (): TabContentList => ({
-  'ai-forex': <InvestmentTab />,
-  'ai-ipo': <InvestmentTab />,
-  'ai-pharmaceutical': <InvestmentTab />,
-  'ai-crypto-lm': <InvestmentTab />
+  'ai-forex': <InvestmentTab tabTitle='AI-Forex' />,
+  'ai-ipo': <InvestmentTab tabTitle='AI-IPO' />,
+  'ai-pharmaceutical': <InvestmentTab tabTitle='AI-Pharmaceutical' />,
+  'ai-crypto-lm': <InvestmentTab tabTitle='AI-Crypto-LM' />
 })
 
 export default function Page() {

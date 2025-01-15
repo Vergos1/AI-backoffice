@@ -9,7 +9,7 @@ import { TabContext, TabPanel } from '@mui/lab'
 import CustomTabList from '@/@core/components/mui/TabList'
 
 const Career = ({ tabContentList }: { tabContentList: { [key: string]: ReactElement } }) => {
-  const [activeTab, setActiveTab] = useState('subscription')
+  const [activeTab, setActiveTab] = useState('ai-subscription')
 
   const handleChange = (event: SyntheticEvent, value: string) => {
     setActiveTab(value)
@@ -36,10 +36,10 @@ const Career = ({ tabContentList }: { tabContentList: { [key: string]: ReactElem
                 className='flex-row justify-start'
               />
               <Tab
-                label='Subscription'
+                label='AI-Subscription'
                 icon={<i className='tabler-credit-card' />}
                 iconPosition='start'
-                value='subscription'
+                value='ai-subscription'
                 className='flex-row justify-start'
               />
             </CustomTabList>

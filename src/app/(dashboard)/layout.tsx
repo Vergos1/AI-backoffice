@@ -5,20 +5,21 @@ import Button from '@mui/material/Button'
 import type { ChildrenType } from '@core/types'
 
 // Layout Imports
+import HorizontalLayout from '@layouts/HorizontalLayout'
 import LayoutWrapper from '@layouts/LayoutWrapper'
 import VerticalLayout from '@layouts/VerticalLayout'
-import HorizontalLayout from '@layouts/HorizontalLayout'
 
 // Component Imports
 import Providers from '@components/Providers'
-import Navigation from '@components/layout/vertical/Navigation'
-import Header from '@components/layout/horizontal/Header'
-import Navbar from '@components/layout/vertical/Navbar'
-import VerticalFooter from '@components/layout/vertical/Footer'
 import HorizontalFooter from '@components/layout/horizontal/Footer'
+import Header from '@components/layout/horizontal/Header'
+import VerticalFooter from '@components/layout/vertical/Footer'
+import Navbar from '@components/layout/vertical/Navbar'
+import Navigation from '@components/layout/vertical/Navigation'
 import ScrollToTop from '@core/components/scroll-to-top'
 
 // Util Imports
+import FullScreenLoaderLayout from '@/components/FullScreenLoader'
 import { getMode, getSystemMode } from '@core/utils/serverHelpers'
 
 const Layout = async ({ children }: ChildrenType) => {
@@ -37,12 +38,12 @@ const Layout = async ({ children }: ChildrenType) => {
             navbar={<Navbar />}
             footer={<VerticalFooter />}
           >
-            {children}
+            <FullScreenLoaderLayout>{children}</FullScreenLoaderLayout>
           </VerticalLayout>
         }
         horizontalLayout={
           <HorizontalLayout header={<Header />} footer={<HorizontalFooter />}>
-            {children}
+            <FullScreenLoaderLayout>{children}</FullScreenLoaderLayout>
           </HorizontalLayout>
         }
       />

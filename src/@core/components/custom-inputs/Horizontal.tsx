@@ -1,16 +1,11 @@
-// MUI Imports
+import Checkbox from '@mui/material/Checkbox'
 import Grid from '@mui/material/Grid'
 import Radio from '@mui/material/Radio'
-import Checkbox from '@mui/material/Checkbox'
 import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
-
-// Third-party Imports
 import classnames from 'classnames'
 
-// Type Imports
-import type { CustomInputHorizontalProps } from './types'
-
+// Стилі компонентів
 const Root = styled('div', {
   name: 'MuiCustomInputHorizontal',
   slot: 'root'
@@ -79,63 +74,55 @@ const CheckboxInput = styled(Checkbox, {
   marginInlineStart: theme.spacing(-0.25)
 }))
 
-const CustomInputHorizontal = (props: CustomInputHorizontalProps) => {
-  // Props
-  const { type, data, name, selected, gridProps, handleChange, color = 'primary' } = props
+const CustomInputHorizontal = (props: any) => {
+  const { type, data, isSwiperCard, disabled, name, selected, gridProps, handleChange, color = 'primary' } = props
 
-  // Vars
-  const { meta, title, value, content } = data
+  const { plan, price, features } = data
 
   const renderData = () => {
-    if (meta && title && content) {
+    if (features) {
       return (
-        <div className='flex flex-col bs-full is-full gap-1.5'>
+        <div className={`flex flex-col is-full gap-1.5 ${isSwiperCard ? 'keen-slider__slide' : ''}`}>
           <div className='flex items-start justify-between is-full mbs-1.5'>
-            {typeof title === 'string' ? <Title>{title}</Title> : title}
-            {typeof meta === 'string' ? <Meta>{meta}</Meta> : meta}
+            <Title textTransform='uppercase'>{plan}</Title>
+            <Meta>{`$${price} Per year`}</Meta>
           </div>
-          {typeof content === 'string' ? <Content>{content}</Content> : content}
+          <Content>
+            <Typography textTransform='uppercase' fontSize={14} fontWeight={600}>
+              {features.testMoneys === 'unlimited' ? 'Unlimited' : `${features.testMoneys} SWCT/SGCT`}
+            </Typography>
+          </Content>
+          <Content>{features.benefitText}</Content>
         </div>
       )
-    } else if (meta && title && !content) {
-      return (
-        <div className='flex items-start justify-between is-full mbs-1.5'>
-          {typeof title === 'string' ? <Title>{title}</Title> : title}
-          {typeof meta === 'string' ? <Meta>{meta}</Meta> : meta}
-        </div>
-      )
-    } else if (!meta && title && content) {
-      return (
-        <div className='flex flex-col bs-full gap-1 mbs-1.5'>
-          {typeof title === 'string' ? <Title>{title}</Title> : title}
-          {typeof content === 'string' ? <Content>{content}</Content> : content}
-        </div>
-      )
-    } else if (!meta && !title && content) {
-      return typeof content === 'string' ? <Content className='mbs-1.5'>{content}</Content> : content
-    } else if (!meta && title && !content) {
-      return typeof title === 'string' ? <Title className='mbs-1.5'>{title}</Title> : title
-    } else {
-      return null
     }
+
+    return null
   }
 
   return data ? (
     <Grid item {...gridProps}>
       <Root
-        onClick={() => handleChange(value)}
+        onClick={() => handleChange(plan)}
         className={classnames({
-          active: type === 'radio' ? selected === value : selected.includes(value)
+          active: type === 'radio' ? selected === plan : selected.includes(plan)
         })}
       >
         {type === 'radio' ? (
-          <RadioInput name={name} color={color} value={value} onChange={handleChange} checked={selected === value} />
+          <RadioInput
+            disabled={disabled}
+            name={name}
+            color={color}
+            value={plan}
+            onChange={handleChange}
+            checked={selected === plan}
+          />
         ) : (
           <CheckboxInput
             color={color}
-            name={`${name}-${value}`}
-            checked={selected.includes(value)}
-            onChange={() => handleChange(value)}
+            name={`${name}-${plan}`}
+            checked={selected.includes(plan)}
+            onChange={() => handleChange(plan)}
           />
         )}
         {renderData()}
