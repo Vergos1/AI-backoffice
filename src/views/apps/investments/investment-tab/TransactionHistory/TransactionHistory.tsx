@@ -5,6 +5,7 @@ import { IconCalendarClock } from '@tabler/icons-react'
 type Props = {
   currentDistributionStart: number
   currentDistributionEnd: number
+  isFinance?: boolean
 }
 
 const CurrentDistributionItem = ({
@@ -40,16 +41,16 @@ const CurrentDistributionItem = ({
   )
 }
 
-const TransactionHistory = ({ currentDistributionStart, currentDistributionEnd }: Props) => {
+const TransactionHistory = ({ isFinance, currentDistributionStart, currentDistributionEnd }: Props) => {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
   return (
     <Card className='h-full'>
       <CardHeader
-        title='Your investment packages'
+        title={isFinance ? 'Transaction History' : 'Your investment packages'}
         subheader={
-          isMobile ? (
+          isMobile && !isFinance ? (
             <CurrentDistributionItem
               mobile
               currentDistributionStart={currentDistributionStart}
@@ -58,7 +59,7 @@ const TransactionHistory = ({ currentDistributionStart, currentDistributionEnd }
           ) : null
         }
         action={
-          !isMobile ? (
+          !isMobile && !isFinance ? (
             <CurrentDistributionItem
               currentDistributionStart={currentDistributionStart}
               currentDistributionEnd={currentDistributionEnd}
