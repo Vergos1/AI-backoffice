@@ -1,7 +1,5 @@
+import Finance from '@/views/apps/finance'
+
 export default function Page() {
-  return (
-    <div>
-      <h1>Finance page!</h1>
-    </div>
-  )
+  return <Finance />
 }

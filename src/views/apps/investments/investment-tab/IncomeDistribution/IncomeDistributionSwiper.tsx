@@ -18,7 +18,7 @@ const IncomeDistributionSwiper = () => {
   return (
     <div ref={ref} className='keen-slider'>
       {INCOME_DISTRIBUTION_CARDS.map((card, index) => (
-        <IncomeDistributionCard activeCard={2} card={card} key={index} />
+        <IncomeDistributionCard activeCard={15} card={card} key={index} />
       ))}
     </div>
   )
