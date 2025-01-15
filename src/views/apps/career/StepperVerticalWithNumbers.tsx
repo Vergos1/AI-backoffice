@@ -12,10 +12,9 @@ import Typography from '@mui/material/Typography'
 
 // Third-party Imports
 import classNames from 'classnames'
-import { toast } from 'react-toastify'
 
 // Component Imports
-import { Box, Collapse } from '@mui/material'
+import { Box } from '@mui/material'
 
 import StepperWrapper from '@core/styles/stepper'
 
@@ -352,7 +351,7 @@ const steps = [
 
 const StepperVerticalWithNumbers = () => {
   // States
-  const [activeStep, setActiveStep] = useState(4)
+  const [activeStep] = useState(4)
 
   return (
     <StepperWrapper>

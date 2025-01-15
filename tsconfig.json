@@ -54,6 +54,9 @@
             ]
         }
     },
+    "rules": {
+        "no-unused-vars": "off",
+    },
     "include": [
         "next.config.mjs",
         "tailwind.config.ts",

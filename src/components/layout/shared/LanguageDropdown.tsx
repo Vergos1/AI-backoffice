@@ -23,8 +23,6 @@ import Popper from '@mui/material/Popper'
 import { useSettings } from '@core/hooks/useSettings'
 
 type LanguageDataType = {
-  //   langCode: Locale
-
   langCode: any
   langName: string
 }
